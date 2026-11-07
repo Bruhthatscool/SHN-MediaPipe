@@ -1,6 +1,4 @@
-# SHN-MEDIAPIPE
-
-# [OPEN SESAME]
+# OPEN SESAME
 
 ### 💡 What's the idea?
 
