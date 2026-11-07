@@ -21,7 +21,7 @@ An interactive, real-time hand gesture recognition system built using **Google M
 ### 👥 The Humans Behind It
 
 * Asher Thomas – [achutom](https://github.com/achutom)
-* Anna Grace – [bruhthatscool](https://www.google.com/search?q=https://github.com/bruhthatscool)
+* Anna Grace – [bruhthatscool](https://github.com/bruhthatscool)
 
 ### 📸 Show Us What You Built!
 
