@@ -8,8 +8,15 @@ GestureRecognizer = mp.tasks.vision.GestureRecognizer
 GestureRecognizerOptions = mp.tasks.vision.GestureRecognizerOptions
 VisionRunningMode = mp.tasks.vision.RunningMode
 
+# Getting latest gestures
+latest_gestures = []
+
 def on_result(result, output_image: mp.Image, timestamp_ms: int):
-    print(f"Gestures at {timestamp_ms} ms: {result.gestures}")
+    global latest_gestures
+    if result.gestures:
+        latest_gestures = result.gestures
+    else:
+        latest_gestures = []
 
 options = GestureRecognizerOptions(
     base_options=BaseOptions(model_asset_path="gesture_recognizer.task"),
@@ -24,7 +31,6 @@ with GestureRecognizer.create_from_options(options) as recognizer:
     cap = cv2.VideoCapture(0)
     print("Webcam started! Press q to exit.")
     start_time = time.time()
-
     while cap.isOpened():
         success, frame = cap.read()
         if not success:
@@ -41,8 +47,15 @@ with GestureRecognizer.create_from_options(options) as recognizer:
         mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
         recognizer.recognize_async(mp_image, timestamp_ms)
 
+        # Getting the gesture text
+        latest_gesture_text = "No Gestures"
+        if latest_gestures:
+            top_gesture = latest_gestures[0][0]
+            latest_gesture_text = f"Gesture Name: {top_gesture.category_name} Score: {top_gesture.score:.2f}"
+        else:
+            latest_gesture_text = "No Gestures"
         #Display window
-        cv2.putText(frame, "Hello World", (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
+        cv2.putText(frame, latest_gesture_text, (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
         cv2.imshow("Gesture recognizer", frame)
 
         if cv2.waitKey(5) & 0xFF == ord("q"):
