@@ -5,7 +5,7 @@
 
 ### 💡 What's the idea?
 
-An interactive, real-time hand gesture recognition system built using **Google MediaPipe** and **OpenCV** that maps physical hand gestures from your webcam to custom actions—such as launching websites or applications instantly with just a flick of your hand!
+An interactive, real-time hand gesture recognition system built using **Google MediaPipe** and **OpenCV** that maps physical hand gestures from your webcam to custom actions—such as launching websites or applications instantly with just gestures!
 
 ### 🌐 Check it out!
 
@@ -32,7 +32,6 @@ An interactive, real-time hand gesture recognition system built using **Google M
 
 * **Real-Time Async Processing:** Uses MediaPipe's live stream mode with an asynchronous callback structure to automatically drop busy frames and keep tracking smooth and responsive.
 * **Dynamic Gesture Triggering:** Detects hand gestures via webcam and triggers custom actions only when the gesture changes (e.g., thumbs up opens YouTube, thumbs down opens Google).
-* **Multi-Hand Support:** Configured to track up to two hands concurrently for robust detection.
 
 ---
 
@@ -85,10 +84,10 @@ Make sure you have the MediaPipe gesture recognition model file (`gesture_recogn
 
 ### 5. Run the Project
 
-Fire up the script and wave at your webcam!
+Fire up the script and show gestures at your webcam!
 
 ```bash
-python main.py
+python gesture_recognizer.py
 
 ```
 
