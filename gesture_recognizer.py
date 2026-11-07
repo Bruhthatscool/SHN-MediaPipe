@@ -1,6 +1,7 @@
 import mediapipe as mp
 import cv2
 import time
+import gesture_actions
 
 
 BaseOptions = mp.tasks.BaseOptions
@@ -52,6 +53,7 @@ with GestureRecognizer.create_from_options(options) as recognizer:
         if latest_gestures:
             top_gesture = latest_gestures[0][0]
             latest_gesture_text = f"Gesture Name: {top_gesture.category_name} Score: {top_gesture.score:.2f}"
+            gesture_actions.open_youtube(top_gesture)
         else:
             latest_gesture_text = "No Gestures"
         #Display window
