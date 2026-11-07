@@ -1,3 +1,6 @@
+# SHN-MEDIAPIPE
+![Project Cover](assets/cover.jpeg)
+
 # OPEN SESAME
 
 ### 💡 What's the idea?
