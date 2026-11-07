@@ -25,7 +25,8 @@ An interactive, real-time hand gesture recognition system built using **Google M
 
 ### 📸 Show Us What You Built!
 
-*(Add screenshots, photos, GIFs, or demo video links here)*
+![project screenshot](assets/thumbssupp.png)
+* **Video:**(https://drive.google.com/file/d/131LCeUTcgmtrpz-Mzw__EOQ1hBkay-JO/view?usp=sharing)
 
 ### ✨ Cool Things It Does
 
